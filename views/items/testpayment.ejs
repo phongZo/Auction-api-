@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Vị trí banner : Top</h1>
+    <h2>Price : 15$</h2>
+    <div>Quantity : 10</div>
+
+    <!-- Paypal -->
+    <!-- <form action="payment/pay" method = "post"  enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="number" name="id" value="">
+        <input type="submit" value="BUY">
+        <input type="hidden" name="id" value = "3">
+    </form> -->
+
+
+    <!-- Visa, Mastercard ... -->
+    <% var stripePublishableKey = stripePublishableKey; %>
+    <% var name = name; %>
+    <% var amount = amount; %>
+    <form action="pay/visa" method="POST">
+      <script
+      src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      var data-key = "<%= stripePublishableKey  %>"
+      data-amount= "<%= amount %>"
+      data-name="<%= name  %>"
+      data-description="Position you can set your banner"
+      data-image="/images/avatar.svg"
+      data-locale="auto">
+    </script>
+        
+        <button type="submit" class="btn btn-outline-dark text-white btn-lg">Purchase By Visa</button>
+      </form>
+</body>
+</html>

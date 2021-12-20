@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/api/product/createAuction" method ="POST">
+        <input type="hidden" name="timeLive" placeholder="timeLive" id="timeLive" value="">
+        <input type="number" name="price_step" placeholder="price_step">
+        <input type="text" name="id"  value="">
+        <input type="datetime-local" name="auctionTime" id="auctionTime">      
+        <input type="datetime-local" name="auction_end_date" id="auction_end_date">     
+        <button type="submit" onclick="setDomain()" >Gán giá trị</button>
+    </form>
+
+    <script>
+        function setDomain(){
+            // var today = new Date();
+            // var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
+            // var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            // var dateTime = date+' '+time;
+
+
+            // var t = new Date();
+            // var YYYY = t.getFullYear();
+            // var MM = ((t.getMonth() + 1 < 10) ? '0' : '') + (t.getMonth() + 1);
+            // var DD = ((t.getDate() < 10) ? '0' : '') + t.getDate();
+            // var HH = ((t.getHours() < 10) ? '0' : '') + t.getHours();
+            // var mm = ((t.getMinutes() < 10) ? '0' : '') + t.getMinutes();
+            // var ss = ((t.getSeconds() < 10) ? '0' : '') + t.getSeconds();
+            // var time_of_call = YYYY+'-'+MM+'-'+DD+' '+HH+':'+mm+':'+ss;
+
+            // new Date(2011, 0, 1);(24 * 3600 * 1000)
+            // var date = new Date(document.getElementById('auctionTime').value(24 * 3600 * 1000))
+            
+             
+            // auction_end_date.setDate(Number(d.getDate()) + Number(document.getElementById('timeLive').value))
+            // auction_end_date.setFullYear(Number(d.getFullYear()))
+            // auction_end_date.setMonth(Number(d.getMonth()))
+            // var time = auction_end_date.getFullYear() + '-' + (auction_end_date.getMonth()+1) + '-' + auction_end_date.getDate()
+            // var day_num = Number(document.getElementById('timeLive').value)
+            //alert(document.getElementById('timeLive').value)
+            var auction_end_date = new Date()
+            d=new Date(document.getElementById('auctionTime').value)
+            e=new Date(document.getElementById('auction_end_date').value)
+            document.getElementById('timeLive').value = (e.getTime() - d.getTime());
+            
+            // //var now = moment();            
+            // document.getElementById('currentTime').value = time_of_call;
+        }
+    </script>
+</body>
+</html>
